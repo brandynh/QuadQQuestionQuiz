@@ -1,0 +1,82 @@
+/*Setting Box sizing to border box for all elements  */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:fantasy;
+}
+
+:root{
+    --mainBackgroundColor: darkslateblue;
+    --headerBackgroundColor: rgb(20, 30, 175);
+    --answerCardBorder: rgb(0, 0, 0);
+    --answerCardBackground: rgb(90, 90, 90);
+    --choiceButtonBackground: rgb(142, 107, 197);
+    --selectorHighlight: chartreuse;
+}
+
+body {
+    background-color: var(--mainBackgroundColor);
+}
+
+header {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: var(--headerBackgroundColor);
+    border-radius: 10px;
+    border: 5px solid var(--answerCardBorder);
+    box-shadow: 0 0 10px 5px;
+    
+
+}
+
+h1 {
+    color: white;
+}
+
+main {
+    
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.answerChoiceContainer {
+    width: 500px;
+    max-width: 90%;
+    height: 500px;
+    max-height: 90%;
+    background-color: var(--answerCardBackground);
+    border-radius: 10px;
+    border: 5px solid var(--answerCardBorder);
+    padding: 50px;
+    box-shadow: 0 0 15px 2px;
+
+}
+
+.buttonLayout {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 100px;
+    margin: 80px 0;
+}
+
+.choiceBtn {
+    background-color: var(--choiceButtonBackground);
+    border: 2px solid var(--answerCardBorder);
+    border-radius: 7px;
+    padding: 20px 20px;
+    color: white;
+    outline: none;
+
+}
+
+.choiceBtn:hover {
+    border-color: white;
+    color: black;
+    background-color: var(--selectorHighlight);
+}
