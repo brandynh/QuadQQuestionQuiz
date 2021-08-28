@@ -102,11 +102,11 @@ main {
 .startBtn:hover {
     color: white;
     background-color: black;
-    box-shadow: 0 0 10px 2px white;
+    box-shadow: 0 0 10px 2px chartreuse;
 }
 
 .nextBtn:hover {
     color: white;
     background-color: black;
-    box-shadow: 0 0 10px 2px white;
+    box-shadow: 0 0 10px 2px chartreuse;
 }
