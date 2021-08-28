@@ -7,8 +7,7 @@
 :root{
     --mainBackgroundColor: darkslateblue;
     --headerBackgroundColor: rgb(20, 30, 175);
-    --answerCardBorder: rgb(0, 0, 0);
-    --answerCardBackground: rgb(90, 90, 90);
+    --cardBorder: rgb(0, 0, 0);
     --choiceButtonBackground: rgb(142, 107, 197);
     --selectorHighlight: chartreuse;
 }
@@ -23,7 +22,7 @@ header {
     text-align: center;
     background-color: var(--headerBackgroundColor);
     border-radius: 10px;
-    border: 5px solid var(--answerCardBorder);
+    border: 5px solid var(--cardBorder);
     box-shadow: 0 0 10px 5px;
     
 
@@ -45,37 +44,24 @@ main {
     
 }
 
-.answerChoiceContainer {
-    width: 500px;
-    max-width: 90%;
-    height: 500px;
-    max-height: 90%;
-    background-color: var(--answerCardBackground);
-    border-radius: 10px;
-    border: 5px solid var(--answerCardBorder);
-    padding: 30px;
-    box-shadow: 0 0 15px 2px;
-
-
-}
-
 .buttonLayout {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 100px;
-    margin: 40px 0;
+    gap: 50px;
+    margin: 20px 0;
 }
 
 .choiceBtn {
     background-color: var(--choiceButtonBackground);
-    border: 2px solid var(--answerCardBorder);
+    border: 2px solid var(--cardBorder);
     border-radius: 7px;
-    padding: 20px 40px;
-    width: 100%;
-    max-width: 100%;
-    height: 200%;
+    padding: 30px 60px;
+    margin: 5px;
+    display: flex;
+    height: 150%;
     color: white;
     outline: none;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -87,17 +73,23 @@ main {
 }
 
 .controls {
-    margin: 150px 0;
+    display: flex;
+    margin: 70px 0px;
+    flex-direction: row;
 }
 
 .startBtn{
     padding: 5px 10px;
     margin: 10px;
+    border-radius: 5px;
+    width: 50%;
 }
 
 .nextBtn{
     padding: 5px 10px;
     margin: 10px;
+    border-radius: 5px;
+    width: 50%;
 }
 .startBtn:hover {
     color: white;
