@@ -44,10 +44,29 @@ main {
     
 }
 
-.timerBox {
+
+.timeBox {
     display: flex;
-    margin: 20px 0;
+    justify-content: center;
+    background-color: var(--mainBackgroundColor);
+    color: white;
+    margin: 10px 20px 10px 90%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 2px solid var(--cardBorder);
 }
+
+.scoreBx {
+    display: flex;
+    justify-content: center;
+    background-color: var(--mainBackgroundColor);
+    color: white;
+    margin: 10px 20px 10px 90%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 2px solid var(--cardBorder);
+}
+
 
 .buttonLayout {
     display: grid;
@@ -78,7 +97,7 @@ main {
 }
 
 .controls {
-    margin: 70px 0px;
+    margin: 40px 0px;
 }
 
 .startBtn, .nextBtn{

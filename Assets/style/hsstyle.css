@@ -1,0 +1,90 @@
+/*Setting Box sizing to border box for all elements  */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:fantasy;
+}
+
+:root{
+    --mainBackgroundColor: darkslateblue;
+    --headerBackgroundColor: rgb(20, 30, 175);
+    --cardBorder: rgb(0, 0, 0);
+    --choiceButtonBackground: rgb(142, 107, 197);
+    --selectorHighlight: chartreuse;
+}
+
+body {
+    background-color: var(--mainBackgroundColor);
+}
+
+header {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: var(--headerBackgroundColor);
+    border-radius: 10px;
+    border: 5px solid var(--cardBorder);
+    box-shadow: 0 0 10px 5px var(--selectorHighlight);
+    color: white;
+}
+
+.userHighScoreInfo {
+    padding: 3%;
+    margin: 6%;
+    color: white;
+}
+
+.highScoreList {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--choiceButtonBackground);
+    margin: -18% 0% 69px 49%;
+}
+
+.initialsForm {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#name {
+    min-height: 50px;
+    max-height: 50px;
+    width: 20%;
+    max-width: 20%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin: 2%;
+}
+
+#name:hover {
+    box-shadow: 0 0 10px 2px var(--selectorHighlight);
+}
+
+#submit {
+    padding: 10px 20px;
+    margin: -1% 78% -4% 2%;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#submit:hover {
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 10px 2px chartreuse;
+}
+
+.returnButton {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+.returnButton:hover {
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 10px 2px chartreuse;
+}
