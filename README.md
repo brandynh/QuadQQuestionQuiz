@@ -4,11 +4,11 @@
 Welcome to the Quad Q Question Quiz 
 
 ## Installation
-This neat device is built in right [here!]()
+This neat device is built in right [here!](https://brandynh.github.io/QuadQQuestionQuiz/)
 
 ## Screenshots
 
-![Screenshot]() ![Screenshot]()
+![Screenshot](./Assets/QuadQQuizSS.gif)
 
 ## Credits 
     
