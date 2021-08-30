@@ -12,17 +12,19 @@
 
 <body>
     <header>
-        <h1 id="question">Question</h1>
+        <h2 id="title">Welcome to Quad Q Question Quiz</h2>
+        <h1 id= "questionBox" class="question hide">Question</h1>
+        <div id="timerBox"class="timeBox hide">
+            <h3 id="timer"></h3>
+        </div>
     </header>
     <main>
-        <div class="answerChoiceContainer">
             <div id="answerChoiceBox" class="hide">
-                
                 <div id="answerChoices" class="buttonLayout">
-                    <button class="choiceBtn">Choice 1</button>
-                    <button class="choiceBtn">Choice 2</button>
-                    <button class="choiceBtn">Choice 3</button>
-                    <button class="choiceBtn">Choice 4</button>
+                    <button id= "choiceBtn" class="choiceButton">Choice 1</button>
+                    <button id= "choiceBtn" class="choiceButton">Choice 2</button>
+                    <button id= "choiceBtn" class="choiceButton">Choice 3</button>
+                    <button id= "choiceBtn" class="choiceButton">Choice 4</button>
                 </div>
             </div>
             <div class="controls">
@@ -30,8 +32,9 @@
                 <button id="nextButton" class="nextBtn hide">Next</button>
 
             </div>
-        </div>
     </main>
     <script src="Assets/js/script.js"></script>
 </body>
 </html>
+
+

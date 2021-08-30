@@ -28,7 +28,7 @@ header {
 
 }
 
-h1 {
+h1, h2 {
     color: white;
 }
 
@@ -37,20 +37,25 @@ main {
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     
 }
 
-.buttonLayout {
-    display: grid;
-    gap: 50px;
+.timerBox {
+    display: flex;
     margin: 20px 0;
 }
 
-.choiceBtn {
+.buttonLayout {
+    display: grid;
+    gap: 70px;
+    margin: 20px 0;
+}
+
+.choiceButton {
     background-color: var(--choiceButtonBackground);
     border: 2px solid var(--cardBorder);
     border-radius: 7px;
@@ -65,7 +70,7 @@ main {
 
 }
 
-.choiceBtn:hover {
+.choiceButton:hover {
     border-color: white;
     color: black;
     background-color: var(--selectorHighlight);
@@ -73,24 +78,16 @@ main {
 }
 
 .controls {
-    display: flex;
     margin: 70px 0px;
-    flex-direction: row;
 }
 
-.startBtn{
-    padding: 5px 10px;
+.startBtn, .nextBtn{
+    padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
-    width: 50%;
+    font-size: 2rem;
 }
 
-.nextBtn{
-    padding: 5px 10px;
-    margin: 10px;
-    border-radius: 5px;
-    width: 50%;
-}
 .startBtn:hover {
     color: white;
     background-color: black;
@@ -101,4 +98,8 @@ main {
     color: white;
     background-color: black;
     box-shadow: 0 0 10px 2px chartreuse;
+}
+
+.hide {
+    display: none;
 }
