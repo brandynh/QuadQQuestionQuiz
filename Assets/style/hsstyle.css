@@ -31,6 +31,14 @@ h2 {
     text-align: center;
 }
 
+.userScores {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 5px;
+    margin: 10px 0px;
+    justify-content: space-evenly;
+}
+
 .userHighScoreInfo {
     padding: 3%;
     margin: 6%;

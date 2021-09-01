@@ -74,7 +74,7 @@ function beginGame() {
     // Unhide next button when start is clicked
     nextButtonEl.classList.remove('hide');
     //Displays default score at 0
-    scoreEl.textContent = userScore;
+    scoreEl.textContent = 'Score: ' + userScore;
     // Calls timer function
     timer();
     // Setting variable array to randomize and sort Objects within Array to assure we don't random a question multiple times
@@ -135,12 +135,11 @@ function userChoice(event) {
     })
     if (userSelection.dataset.correct) {
         userScore += 5;
-        timeRemaining +=2;
         nextButtonEl.classList.remove('hide');
-        updateUserScore()
+        updateUserStats()
     } else {
         userScore--;
-        updateUserScore();
+        updateUserStats();
     }
     if (randomizeQuestions.length > currentQuestionNumber + 1) {
         nextButtonEl.classList.remove('hide')
@@ -180,8 +179,8 @@ function timer() {
     }, 1000);
 }
 
-function updateUserScore() {
-    scoreEl.textContent = userScore;
+function updateUserStats() {
+    scoreEl.textContent = 'Score: ' + userScore;
 }
 
 function highScoreScreen() {
