@@ -130,7 +130,6 @@ function resetQuestion() {
 function userChoice(event) {
     const userSelection = event.target;
     const correct = userSelection.dataset.correct;
-    // S
     Array.from(answerButtonsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
