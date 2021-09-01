@@ -27,6 +27,10 @@ header {
     color: white;
 }
 
+h2 {
+    text-align: center;
+}
+
 .userHighScoreInfo {
     padding: 3%;
     margin: 6%;
@@ -37,8 +41,10 @@ header {
     display: flex;
     flex-direction: column;
     background-color: var(--choiceButtonBackground);
-    margin: -18% 0% 69px 49%;
+    margin: -15% 0% 69px 49%;
+    border-radius: 10px;
 }
+
 
 .initialsForm {
     display: flex;
@@ -87,4 +93,8 @@ header {
     color: white;
     background-color: black;
     box-shadow: 0 0 10px 2px chartreuse;
+}
+
+.hide {
+    display: none;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Assets/style/hsstyle.css" rel="stylesheet">
-    <title>Document</title>
+    <title>QuizScores</title>
 </head>
 
 <body>
@@ -22,8 +22,8 @@
 
         <div class="highScoreList">
             <h2>Leaderboard</h2>
-            <p>Player Initials: <span id="playerInitials"></span> Score: <span id="playerScore"></span></p></p>
-
+            <p>Player Initials:<span id="playerInitials"></span></p>
+            <p>Score: <span id="playerScore"></span></p>
 
         </div>
 
@@ -31,17 +31,14 @@
 
     <div = id ="returnButtonBox">
         <button id="returnHome" class="returnButton">Return</button>
+
+<!-- Initialize unused buttons hidden as to not interfere with event listeners -->
+        <button id="startButton" class="startBtn hide">Start</button>
+        <button id="nextButton" class="nextBtn hide">Next</button>
+        <button id="highScoreScreen" class="startBtn hide">High Scores</button>
     </div>
 
-    <script>
-    const returnButtonEl = document.getElementById('returnHome');
-    returnButtonEl.addEventListener("click", returnToStart)
-
-    function returnToStart() {
-    console.log("Pressed");
-    window.location.href="index.html";
-}
-    </script>
+    <script src="Assets/js/script.js"></script>
 </body>
 
 </html>

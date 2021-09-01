@@ -12,9 +12,11 @@ const timerEl = document.getElementById('timer');
 const scoreBoxEl = document.getElementById('scoreBox')
 const scoreEl = document.getElementById('score');
 const gameStatsEl = document.getElementById('gameStats');
+const returnButtonEl = document.getElementById('returnHome');
+const highScoreButtonEl = document.getElementById('highScoreScreen');
 
 
-//Array of Objects
+//Array of Objects Setting questions, answers, and boolean for correct and incorrect choice check
 
 const questionList = [
     {
@@ -46,6 +48,8 @@ const questionList = [
     }
 ]
 
+// Let variable for timer
+let timeRemaining = 20;
 // Let variable initalized at undefined to be changed for randoming question and tracking question number
 let randomizeQuestions, currentQuestionNumber;
 // Let variable initalized at undefined to track users score
@@ -53,19 +57,20 @@ let userScore = 0;
 
 // Event listeners for control buttons
 
-startButtonEl.addEventListener('click', beginGame);
-nextButtonEl.addEventListener('click', () => {
+    startButtonEl.addEventListener('click', beginGame)
+    nextButtonEl.addEventListener('click', () => {
     currentQuestionNumber++;
     nextQuestion();
-});
-
-
+    });
+    returnButtonEl.addEventListener('click', returnHome);
+    highScoreButtonEl.addEventListener('click', highScoreScreen);
 // Start game function
 
 function beginGame() {
     // Hiding elements in HTML after clicking start
     startButtonEl.classList.add('hide');
     titleEl.classList.add('hide');
+    highScoreButtonEl.classList.add('hide');
     // Unhide next button when start is clicked
     nextButtonEl.classList.remove('hide');
     //Displays default score at 0
@@ -92,8 +97,11 @@ function nextQuestion() {
 
 }
 
+// This function populates the question box with the next question as well as remove old answer button elements and append and assign new ones
+
 function showQuestion(question) {
     questionBoxEl.innerText = question.question;
+    // Run a for each look through the array of elements winith answers. For each element we will create a button set the text to the text with answer array add the choiceButton class to the button and set data set for correct answer
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text;
@@ -101,26 +109,34 @@ function showQuestion(question) {
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
+        // adding event listner to new buttons
         button.addEventListener('click', userChoice);
+        // Appends new answer buttons to botton of button list
         answerButtonsEl.appendChild(button);
     });
 
 }
 
+// This function hides the next button and removes the previous answer buttons
 function resetQuestion() {
     nextButtonEl.classList.add('hide');
+    // While the previous answerbutton elements exist remove them.
     while (answerButtonsEl.firstChild) {
         answerButtonsEl.removeChild(answerButtonsEl.firstChild);
     }
 }
 
+//This function determines if the users selection is correct or incorrect, increments or decrements score, and ends the game if there are no more questions.
 function userChoice(event) {
     const userSelection = event.target;
     const correct = userSelection.dataset.correct;
+    // S
     Array.from(answerButtonsEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)})
-    if(userSelection.dataset.correct){
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (userSelection.dataset.correct) {
         userScore += 5;
+        timeRemaining +=2;
         nextButtonEl.classList.remove('hide');
         updateUserScore()
     } else {
@@ -130,7 +146,7 @@ function userChoice(event) {
     if (randomizeQuestions.length > currentQuestionNumber + 1) {
         nextButtonEl.classList.remove('hide')
     } else {
-        endGame();
+        highScoreScreen();
     }
 }
 
@@ -150,7 +166,6 @@ function removeClassStatus(element) {
 }
 
 function timer() {
-    var timeRemaining = 3;
     timerBoxEl.classList.remove('hide');
 
     var interval = setInterval(function () {
@@ -161,7 +176,7 @@ function timer() {
             timerEl.textContent = '';
             timerBoxEl.classList.add('hide');
             clearInterval(timeRemaining);
-            endGame();
+            highScoreScreen();
         }
     }, 1000);
 }
@@ -170,7 +185,14 @@ function updateUserScore() {
     scoreEl.textContent = userScore;
 }
 
-function endGame () {
-    window.location.href="highScore.html";
+function highScoreScreen() {
+    window.location.href = "highScore.html";
+    returnButtonEl.classList.remove('hide')
+
 }
 
+function returnHome() {
+    window.location.href = "index.html"
+    returnButtonEl.classList.add('hide')
+    highScoreButtonEl.classList.remove('hide');
+}
