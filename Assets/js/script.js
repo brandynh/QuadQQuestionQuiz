@@ -54,6 +54,7 @@ let timeRemaining = 20;
 let randomizeQuestions, currentQuestionNumber;
 // Let variable initalized at undefined to track users score
 let userScore = 0;
+let userTotalScore = userScore += timeRemaining;
 
 // Event listeners for control buttons
 
