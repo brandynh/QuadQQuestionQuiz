@@ -31,6 +31,17 @@ h2 {
     text-align: center;
 }
 
+.scoreBx {
+    display: flex;
+    justify-content: center;
+    background-color: var(--mainBackgroundColor);
+    color: white;
+    margin: 10px 20px 10px 90%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 2px solid var(--cardBorder);
+}
+
 .userScores {
     display: grid;
     grid-template-columns: repeat(2, auto);

@@ -14,6 +14,7 @@ const scoreEl = document.getElementById('score');
 const gameStatsEl = document.getElementById('gameStats');
 const returnButtonEl = document.getElementById('returnHome');
 const highScoreButtonEl = document.getElementById('highScoreScreen');
+const totalScoreEl = document.getElementById('scoreTotal');
 
 
 //Array of Objects Setting questions, answers, and boolean for correct and incorrect choice check
@@ -54,7 +55,6 @@ let timeRemaining = 20;
 let randomizeQuestions, currentQuestionNumber;
 // Let variable initalized at undefined to track users score
 let userScore = 0;
-let userTotalScore = userScore += timeRemaining;
 
 // Event listeners for control buttons
 
@@ -65,6 +65,7 @@ let userTotalScore = userScore += timeRemaining;
     });
     returnButtonEl.addEventListener('click', returnHome);
     highScoreButtonEl.addEventListener('click', highScoreScreen);
+
 // Start game function
 
 function beginGame() {
@@ -184,9 +185,15 @@ function updateUserStats() {
     scoreEl.textContent = 'Score: ' + userScore;
 }
 
+function userTotal() {
+    let userTotalScore = userScore += timeRemaining;
+    totalScoreEl.textContent = 'Score: ' + userTotalScore;
+}
+
 function highScoreScreen() {
     window.location.href = "highScore.html";
-    returnButtonEl.classList.remove('hide')
+    returnButtonEl.classList.remove('hide');
+    userTotal();
 
 }
 
